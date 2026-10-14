@@ -13,8 +13,8 @@ export const Navbar = () => {
 
   return (
     <header
-      id="top"
-      className="sticky top-0 z-50 border-b border-border/50 bg-background/90 backdrop-blur"
+    id="top"
+    className="fixed left-0 right-0 top-0 z-50 border-b border-border/50 bg-background/90 backdrop-blur"
     >
       <nav className="relative container mx-auto flex h-16 items-center justify-between px-4 sm:h-20 sm:px-6">
 

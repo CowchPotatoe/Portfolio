@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <Navbar />
-      <main>
+      <main className="pt-16 sm:pt-20">
         <Hero />
         <About />
         <Projects />
