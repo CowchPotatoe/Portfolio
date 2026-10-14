@@ -1,5 +1,5 @@
-export const Navbar = () => {
+export const Hero = () => {
     return (
-        <header>Hello</header>
+        <section>Hello</section>
     );
 }
