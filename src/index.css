@@ -22,3 +22,20 @@
   --color-highlight: #FFB86B;
   --color-surface: #151F35;
 }
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  button {
+    cursor: pointer;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: "Inter", sans-serif;
+  }
+  .font-serif {
+    font-family: "Playfair Display", serif;
+  }
+}
