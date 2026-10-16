@@ -26,8 +26,7 @@ export const Button = ({
       "bg-primary text-primary-foreground hover:bg-primary/90",
 
     secondary:
-      "bg-surface text-foreground hover:bg-surface/80",
-
+      "bg-secondary text-secondary-foreground hover:bg-secondary/80",
     outline:
       "border border-primary text-foreground hover:bg-primary/10",
   };

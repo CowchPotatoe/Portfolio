@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
 @theme {
+  --font-serif: "Playfair Display", serif;
+
   --color-background: #0B1020;
   --color-foreground: #E8EDF7;
-
   --color-card: #111A2E;
 
   --color-primary: #8B8CFF;
@@ -16,9 +17,6 @@
   --color-muted-foreground: #A0AAC3;
 
   --color-border: #293653;
-
-  --radius: 0.75rem;
-
   --color-highlight: #FFB86B;
   --color-surface: #151F35;
 }
@@ -27,16 +25,15 @@
   html {
     scroll-behavior: smooth;
   }
-  button {
+
+  button:not(:disabled) {
     cursor: pointer;
   }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: "Inter", sans-serif;
-  }
-  .font-serif {
-    font-family: "Playfair Display", serif;
   }
 }
 
@@ -59,8 +56,77 @@
   }
 
   .glow-border {
-    box-shadow: 0 0 20px
-        color-mix(in srgb, var(--color-primary) 20%, transparent),
+    box-shadow:
+      0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent),
       inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
+  }
+
+  /* CowchPotatoe flickers once */
+  .light-flicker {
+    animation: light-flicker 4s ease-in-out forwards;
+  }
+
+  @keyframes light-flicker {
+    0% {
+      opacity: 0;
+      text-shadow: none;
+    }
+
+    15% {
+      opacity: 0.45;
+      text-shadow: 0 0 10px var(--color-primary);
+    }
+
+    22% {
+      opacity: 0.8;
+      text-shadow: 0 0 18px var(--color-primary);
+    }
+
+    28% {
+      opacity: 0.05;
+      text-shadow: none;
+    }
+
+    40% {
+      opacity: 0.35;
+      text-shadow: 0 0 8px var(--color-primary);
+    }
+
+    55% {
+      opacity: 0.85;
+      text-shadow: 0 0 22px var(--color-primary);
+    }
+
+    63% {
+      opacity: 0.2;
+      text-shadow: none;
+    }
+
+    68% {
+      opacity: 1;
+      text-shadow: 0 0 30px var(--color-primary);
+    }
+
+    72% {
+      opacity: 0.1;
+      text-shadow: none;
+    }
+
+    77% {
+      opacity: 0.9;
+      text-shadow: 0 0 24px var(--color-primary);
+    }
+
+    81% {
+      opacity: 0.3;
+      text-shadow: 0 0 5px var(--color-primary);
+    }
+
+    86%,
+    100% {
+      opacity: 1;
+      text-shadow: 0 0 30px
+        color-mix(in srgb, var(--color-primary) 50%, transparent);
+    }
   }
 }
