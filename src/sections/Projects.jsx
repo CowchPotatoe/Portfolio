@@ -8,6 +8,7 @@ import {
   Rocket,
   NotebookText,
 } from "lucide-react";
+import { Button } from "@/components/Button";
 
 const projects = [
   {
@@ -74,36 +75,45 @@ export const Projects = () => {
             <p className="text-sm font-semibold uppercase tracking-widest text-primary">
               What I've Built
             </p>
+
             <div className="mb-4 mt-4 h-1 w-16 rounded-full bg-primary" />
+
             <h2 className="text-3xl font-bold sm:text-4xl">
               My Projects
             </h2>
+
             <p className="mt-3 text-sm text-muted-foreground sm:text-base">
               Things I've built, explored, and learned along the way.
             </p>
           </div>
 
+          {/* Carousel arrows */}
           <div className="flex gap-2 self-end">
-            <button
+            <Button
               type="button"
+              size="icon"
+              variant="outline"
               onClick={showPrevious}
               aria-label="Previous projects"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface transition hover:border-primary hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              className="!flex !h-10 !w-10 !items-center !justify-center !p-0 !border-border hover:!border-primary hover:!bg-primary/10"
             >
               <ChevronLeft size={20} />
-            </button>
-            <button
+            </Button>
+
+            <Button
               type="button"
+              size="icon"
+              variant="outline"
               onClick={showNext}
               aria-label="Next projects"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface transition hover:border-primary hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              className="!flex !h-10 !w-10 !items-center !justify-center !p-0 !border-border hover:!border-primary hover:!bg-primary/10"
             >
               <ChevronRight size={20} />
-            </button>
+            </Button>
           </div>
         </div>
 
-        {/* One card on mobile, two on tablet, three on desktop */}
+        {/* Project cards */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {visibleProjects.map((project, index) => {
             const hidden =
@@ -131,6 +141,7 @@ export const Projects = () => {
                       <h3 className="font-semibold sm:text-lg">
                         {project.title}
                       </h3>
+
                       <p className="mt-2 text-sm leading-6 text-muted-foreground">
                         {project.description}
                       </p>
@@ -145,7 +156,6 @@ export const Projects = () => {
                     className={cardStyle}
                   >
                     <div className="relative aspect-video overflow-hidden bg-surface">
-                      {/* Show the icon only if the image fails to load */}
                       <img
                         src={project.image}
                         alt={`${project.title} project`}
@@ -157,6 +167,7 @@ export const Projects = () => {
                         className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
 
+                      {/* Fallback icon if the image fails to load */}
                       <div className="absolute inset-0 hidden flex-col items-center justify-center gap-2">
                         <Icon className={iconStyle} />
                         <span className="text-sm text-muted-foreground">
@@ -170,6 +181,7 @@ export const Projects = () => {
                         <h3 className="font-semibold transition-colors group-hover:text-primary sm:text-lg">
                           {project.title}
                         </h3>
+
                         <p className="mt-2 text-sm leading-6 text-muted-foreground">
                           {project.description}
                         </p>
