@@ -58,8 +58,8 @@ export const Hero = () => {
           {/* Border and glow appear on hover */}
           <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-transparent bg-card p-3 shadow-2xl transition-all duration-300 hover:border-primary hover:shadow-[0_0_25px_rgba(139,140,255,0.45)]">
             <img
-              src="/images/profile.jpeg"
-              alt="Ivan Chen"
+              src={`${import.meta.env.BASE_URL}images/profile.jpeg`}
+              alt="Profile"
               className="h-full w-full rounded-2xl object-cover"
             />
           </div>
