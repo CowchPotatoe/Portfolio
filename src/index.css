@@ -17,7 +17,6 @@
   --color-muted-foreground: #A0AAC3;
 
   --color-border: #293653;
-  --color-highlight: #FFB86B;
   --color-surface: #151F35;
 }
 
@@ -59,6 +58,34 @@
     box-shadow:
       0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent),
       inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
+  }
+
+  /* Skills card scrollbar */
+  .skills-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+
+  .skills-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .skills-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .skills-scrollbar::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 999px;
+  }
+
+  /* Show the scrollbar when the skills list is hovered */
+  .skills-scrollbar:hover {
+    scrollbar-color: var(--color-primary) transparent;
+  }
+
+  .skills-scrollbar:hover::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
   }
 
   /* CowchPotatoe flickers once */

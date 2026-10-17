@@ -105,7 +105,7 @@ export const Experience = () => {
                   </div>
 
                   {/* Scrollable skills */}
-                  <div className="max-h-[132px] space-y-1 overflow-y-auto pr-1">
+                  <div className="skills-scrollbar max-h-[132px] space-y-1 overflow-y-auto pr-1">
                     {group.skills.map((skill) => (
                       <div
                         key={skill}
